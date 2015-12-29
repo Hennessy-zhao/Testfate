@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>测试你们的缘分~~</title>
+	<meta http-equiv="Content-TYPE" content="text/html;charset=utf-8"/>
+	<script src="public/js/jquery-2.1.4.min.js" ></script>
+	<link  rel="stylesheet" href="public/css/bootstrap.min.css"/>
+	<script src="public/js/bootstrap.js" ></script>
+	<style type="text/css">
+		#container.col-md-12{
+			height: auto;
+			background-color:white;
+			background-image: url(public/002.jpg);
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+		}
+
+		#body.col-md-4{
+			height: auto;
+			background-color: white;
+			margin-top: 2%;
+			margin-left: 34%;
+			border-radius: 5%;
+			border: 1px solid rgba(152, 111, 36, 0.59);
+			background-image: url(public/001.jpg);
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			box-shadow: 5px 5px 5px rgba(144, 103, 27, 0.41);
+			margin-bottom: 50px;
+
+		}
+
+
+		#title{
+			width: 90%;
+			height: auto;
+			background-color: white;
+			margin-left: 5%;
+			margin-top: 8%;
+			border-radius: 8px;
+			box-shadow: 5px 5px 5px grey;
+			text-align: center;
+		}
+
+		#content{
+			width: 90%;
+			height: auto;
+			margin-left: 5%;
+			margin-top: 8%;
+			font-family: 华文楷体;
+			font-size: 18px;
+			color: black;
+		}
+
+
+		#result{
+			width: 75%;
+			height: auto;
+			margin-left: 10%;
+			margin-top: 8%;
+			border: 1px solid rgba(255, 0, 0, 0.36);
+			background-image: url(public/004.jpg);
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			border-radius: 200px;
+			box-shadow: 5px 5px 5px grey;
+		}
+
+		#message{
+			width: 90%;
+			height: auto;
+			margin-left: 5%;
+			margin-top: 3%;
+			background-color: rgba(204, 73, 96, 0.25);
+			color: black;
+			border-radius: 8px;
+			box-shadow: 5px 5px 5px grey;
+		}
+
+		p.p1{
+			font-family: 华文楷体;
+			font-size: 20px;
+			padding: 6px;
+			color: black;
+		}
+
+
+		p.p2{
+			text-align: center;
+			font-size: 120px;
+			font-family: 华文行楷;
+			color: black;
+		}
+
+		p.p3{
+			text-align: left;
+			font-family: 华文楷体;
+			font-size: 20px;
+		}
+
+		p.p4{
+			
+			font-family: 华文楷体;
+			font-size: 18px;
+			margin-left: 10px;
+			margin-right: 10px;
+		}
+
+
+
+		table.tab1{
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12" id="container">
+				<div class="row">
+					<div class="col-md-4" id="body">
+						<div id="title">
+							<p class="p1">测试你和另一个她/他的缘分指数</p>
+						</div>
+						<div id="content">
+							<form accept="#" method="post">
+								<table class="tab1">
+									<tr>
+										<td>请输入你的名字</td>
+										<td style="width:60%;"><input type="text" class="form-control" id="myname" placeholder="请输入名称"></td>
+									</tr>
+									<tr>
+										<td>&nbsp</td>
+									</tr>
+									<tr>
+										<td>请输入他/她的名字</td>
+										<td style="width:60%;"><input type="text" class="form-control" id="hisname" placeholder="请输入名称"></td>
+									</tr>
+									<tr>
+										<td>&nbsp</td>
+									</tr>
+									<tr >
+										<td colspan="2" align="center">
+											
+											<button type="button" class="btn btn-primary" onclick="result()">查看结果</button>
+										</td>
+									</tr>
+								</table>
+							</form>
+						</div>
+						<div id="result">
+							<p class="p2" id="p2">0%</p>
+						</div>
+						<div id="message">
+							<p class="p3">评语：</p>
+							<p class="p4" id="p4">无</p>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+
+		function result()
+		{
+			x=document.getElementById("myname").value;
+			y=document.getElementById("hisname").value;
+			if(x==''&&y=='')
+			{
+				alert("对不起，姓名必须全部填写！");
+			}
+			else
+			{
+				
+				var	result=Math.random();
+				result=result*100;
+				result=Math.round(result);
+				document.getElementById("p2").innerHTML=result+"%";
+
+				if(result==0)
+				{
+					document.getElementById("p4").innerHTML="真的太遗憾了，你们之间没有任何缘分，强扭的瓜不甜，还是分开比较好。。。";
+				}
+				else if(result>0&&result<=15)
+				{
+					document.getElementById("p4").innerHTML="你们的缘分比较浅，如果真的要在一起恐怕比较困难，还是慎重考虑未来是不是在一起比较好";
+				}
+				else if(result>15&&result<=30)
+				{
+					document.getElementById("p4").innerHTML="你们的缘分一般般，在一起或许比较困难，有很多要克服的阻碍，但并不是完全没有可能";
+				}
+				else if(result>30&&result<=45)
+				{
+					document.getElementById("p4").innerHTML="你们的缘分还可以，但是如果考虑成为恋人稍微欠缺，如果做朋友说不定会有意外的收获";
+				}
+				else if(result>45&&result<=60)
+				{
+					document.getElementById("p4").innerHTML="你们的缘分还好，如果是恋人或许尝尝吵架磕磕绊绊，但是如果是朋友那你们一定无话不说~~";
+				}
+				else if(result>60&&result<=75)
+				{
+					document.getElementById("p4").innerHTML="你们的缘分很好，如果是恋人一定是可以互相包容相处融洽的恋人，偶尔小吵也不会影响彼此的感情，有很大的可能携手永远，如果是朋友一定是非常亲密的朋友！";
+				}
+				else if(result>75&&result<=90)
+				{
+					document.getElementById("p4").innerHTML="你们非常有缘，如果是恋人，你们是最适合相伴终生的伴侣，如果是朋友，你们一定亲密无间，可以把自己的交给对方，祝福你们";
+				}
+				else if(result>90&&result<100)
+				{
+					document.getElementById("p4").innerHTML="你们简直超级有缘，如果这种程度下你们不能在一起的话，那世界上都没有人相信爱情了！！！";
+				}
+
+			}
+		}
+	</script>
+</body>
+</html>
